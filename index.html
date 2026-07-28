@@ -1,0 +1,35 @@
+ <!––
+Bekijk html in plaats van broncode.     
+https://geert-jan77.github.io/Van-Graphchart-sjabloon-naar-Commons-grafiek/Index.html
+Van Graphchart sjabloon naar Commons grafiek
+––>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Van Graphchart sjabloon naar Commons grafiek</title>
+</head>
+<body>
+  <form id="frm1" action="/Van-Graphchart-sjabloon-naar-Commons-grafiek//actie_pagina.html">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<p>Click "Try it" to display the value of each element in the form.</p>
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+function myFunction() {
+  var x = document.getElementById("frm1");
+  var text = "";
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    text += x.elements[i].value + "<br>";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+
+</script>
+</body>
+</html>
