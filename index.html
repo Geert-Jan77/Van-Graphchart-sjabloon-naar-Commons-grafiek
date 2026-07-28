@@ -62,7 +62,19 @@ function myFunction() {
   }
   document.getElementById("demo").innerHTML = text;
 }
-
+<p>Klik "Lees Sjabloon" om het sjabloon te lezen.</p>
+<button onclick="leesSjabloon()">Lees Sjabloon</button>
+<p id="display"></p>
+<script>
+function leesSjabloon() {
+  var x = document.getElementById("sjabloon");
+  var text = "";
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    text += x.elements[i].value + "<br>";
+  }
+  document.getElementById("display").innerHTML = text;
+ }
 </script>
 </body>
 </html>
