@@ -23,14 +23,14 @@ Van Graphchart sjabloon naar Commons grafiek
  staat in de artikelruimte van Wikipedia. Het sjabloon <code>GraphChart</code> is echter uitgeschakeld sinds januari 2025.<br>
  Daarom migreren we zo'n 80 grafieken naar wikimedia commons. In de wikipedia artikelruimte komt <br>
  <code>{{#chart:Tegenstroomprincipe1.chart}}</code> en in commons het grafiek xml-bestand <br>
- https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.chart <br><br>
+ <p id="grafieknaam">https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.chart</p> <br><br>
  <code>  <div><p id="chart"> { "license": "CC0-1.0",  "mediawikiCategories": [ {"name": "Data:Line.chart"} ], "version": 1, 
   "type": "line", "title": { "nl": "" }, "xAxis": { "title": { "nl": "Tijd(s)" } },
   "yAxis": { "title": { "nl": "°C" }, "format": "auto" }, "source": "Tegenstroomprincipe1.tab", 
   "@documentation": "https://www.mediawiki.org/wiki/Extension:Chart/Specification" } 
  </p></div></code><br><br>
  met daarin een verwijzing naar de xml tabel <br>
- https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.tab<br><br>  
+ <p id="tabelnaam">https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.tab</p><br><br>  
  <code> <div><p id="tabel"> { "license": "CC0-1.0", "description": { "nl": "tegenstroom grafiek 1" },
    "mediawikiCategories": [ { "name": "Data for Chart", "sort": "" }, { "name": "Thermodynamics",
    "sort": "" } ], "schema": { "fields": [ 
@@ -50,7 +50,7 @@ Van Graphchart sjabloon naar Commons grafiek
   Sjabloon code <input type="submit" value="Opsturen"> (doet niks)
 </form>
 <p>Klik "Uitvoeren" om de nieuwe artikelnaam en sjabloon weer te geven.</p>
-<button onclick="myFunction()">Uitvoeren</button>
+<button onclick="nieuwSjabloon()">Uitvoeren</button>
 <p id="demo"></p>
 <script>
 function myFunction() {
@@ -63,6 +63,15 @@ function myFunction() {
   document.getElementById("demo").innerHTML = text;
 }
 </script>
+ <script>
+function nieuwSjabloon() {
+  var x1 = document.getElementById("fname");
+  var x2 = document.getElementById("lname");
+  document.getElementById("sjabloon").innerHTML = x1.innerHTML;
+ document.getElementById("grafieknaam").innerHTML = "abc" + x2.innerHTML + "xyz";
+ document.getElementById("tabelnaam").innerHTML = "abc" + x2.innerHTML + "xyz";
+}
+ </script>
 <p>Klik "Lees Sjabloon" om het sjabloon te lezen.</p>
 <button onclick="leesSjabloon()">Lees Sjabloon</button>
 <p id="display"></p>
