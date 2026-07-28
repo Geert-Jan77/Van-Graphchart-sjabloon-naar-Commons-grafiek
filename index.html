@@ -49,7 +49,7 @@ Van Graphchart sjabloon naar Commons grafiek
   <input type="text" id="lname" name="lname"><br><br>
   Sjabloon code <input type="submit" value="Opsturen"> (doet niks)
 </form>
-<p>Klik "Uitvoeren" om de nieuwe artikelnaam en sjabloon weer te geven.</p>
+<p>Klik "Uitvoeren" om de nieuwe artikelnaam en sjabloon weer te geven..</p>
 <button onclick="nieuwSjabloon()">Uitvoeren</button>
 <p id="demo"></p>
 <script>
@@ -67,9 +67,9 @@ function myFunction() {
 function nieuwSjabloon() {
   var x1 = document.getElementById("fname");
   var x2 = document.getElementById("lname");
-  document.getElementById("sjabloon").innerHTML = x1.innerHTML;
- document.getElementById("grafieknaam").innerHTML = "abc" + x2.innerHTML + "xyz";
- document.getElementById("tabelnaam").innerHTML = "abc" + x2.innerHTML + "xyz";
+  document.getElementById("sjabloon").innerHTML = x1.value;
+ document.getElementById("grafieknaam").innerHTML = "abc" + x2.value + "xyz";
+ document.getElementById("tabelnaam").innerHTML = "abc" + x2.value + "xyz";
 }
  </script>
 <p>Klik "Lees Sjabloon" om het sjabloon te lezen.</p>
