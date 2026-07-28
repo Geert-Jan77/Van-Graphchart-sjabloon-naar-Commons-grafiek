@@ -21,83 +21,21 @@ De volgende code <br>
  Daarom migreren we zo'n 80 grafieken naar wikimedia commons. In de wikipedia artikelruimte komt <br>
  <code>{{#chart:Tegenstroomprincipe1.chart}}</code> en in commons het grafiek xml-bestand <br>
  https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.chart <br>
- <code>  {
-    "license": "CC0-1.0",
-    "mediawikiCategories": [
-        {
-            "name": "Data:Line.chart"
-        }
-    ],
-    "version": 1,
-    "type": "line",
-    "title": {
-        "nl": ""
-    },
-    "xAxis": {
-        "title": {
-            "nl": "Tijd(s)"
-        }
-    },
-    "yAxis": {
-        "title": {
-            "nl": "°C"
-        },
-        "format": "auto"
-    },
-    "source": "Tegenstroomprincipe1.tab",
-    "@documentation": "https://www.mediawiki.org/wiki/Extension:Chart/Specification"
-}
+ <code>   { "license": "CC0-1.0", 
+    "mediawikiCategories": [ {"name": "Data:Line.chart"} ], "version": 1, "type": "line",
+    "title": { "nl": "" }, "xAxis": { "title": { "nl": "Tijd(s)" } },
+    "yAxis": { "title": { "nl": "°C" }, "format": "auto" }, "source": "Tegenstroomprincipe1.tab",
+    "@documentation": "https://www.mediawiki.org/wiki/Extension:Chart/Specification" }
  </code>
  met daarin een verwijzing naar de xml tabel 
  https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.tab
- <code>  {
-    "license": "CC0-1.0",
-    "description": {
-        "nl": "tegenstroom grafiek 1"
-    },
-    "mediawikiCategories": [
-        {
-            "name": "Data for Chart",
-            "sort": ""
-        },
-        {
-            "name": "Thermodynamics",
-            "sort": ""
-        }
-    ],
-    "schema": {
-        "fields": [
-            {
-                "name": "x",
-                "type": "number",
-                "title": {
-                    "en": "Time(s)",
-                    "nl": "Tijd(s)"
-                }
-            },
-            {
-                "name": "y1",
-                "type": "number",
-                "title": {
-                    "nl": "Koude kant"
-                }
-            },
-            {
-                "name": "y2",
-                "type": "number",
-                "title": {
-                    "nl": "Verschil"
-                }
-            },
-            {
-                "name": "y3",
-                "type": "number",
-                "title": {
-                    "nl": "Warme kant"
-                }
-            }
-        ]
-    },
+ <code>  { "license": "CC0-1.0", "description": { "nl": "tegenstroom grafiek 1" },
+   "mediawikiCategories": [ { "name": "Data for Chart", "sort": "" }, { "name": "Thermodynamics",
+   "sort": "" } ], "schema": { "fields": [ 
+   { "name": "x", "type": "number", "title": { "en": "Time(s)", "nl": "Tijd(s)" } },
+   { "name": "y1", "type": "number", "title": { "nl": "Koude kant" } },
+   { "name": "y2", "type": "number", "title": { "nl": "Verschil" } },
+   { "name": "y3", "type": "number", "title": { "nl": "Warme kant" } } ] },
     "data": [
         [
             0,
