@@ -10,7 +10,177 @@ Van Graphchart sjabloon naar Commons grafiek
 </head>
 <body>
   <h3>Van Graphchart sjabloon naar Commons grafiek</h3>
-De volgende code <code> {{GraphChart|width=400|height=200|xAxisTitle=Tijd (s)|yAxisTitle=°C|legend=Legend|type=line|x=0,2,5,10,15,20,25,30,35,40,45,50,55,60|y1=100,92.3,83.0,71.7,64.3,59.4,56.2,54.1,52.7,51.8,51.2,50.8,50.5,50.3|y2=0,7.7,17.0,28.3,35.7,40.6,43.8,45.9,47.3,48.2,48.8,49.2,49.5,49.7|y3=100,84.6,65.9,43.4,28.6,18.9,12.4,8.2,5.4,3.6,2.3,1.5,1.0,0.7|interpolate=monotone|y1Title=Warme kant|y2Title=Koude kant|y3Title=Verschil|colors=red,blue,green|showValues}}</code> staat in de artikelruimte van Wikipedia. Het sjabloon <code>GraphChart</code> is echter uitgeschakeld sinds januari 2025. Daarom migreren we zo'n 80 grafieken naar wikimedia commons. In de wikipedia artikelruimte komt <code>{{#chart:Tegenstroomprincipe1.chart}}</code> en in commons het grafiek xml bestand https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.chart met daarin een verwijzing naar de xml tabel https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.tab
+De volgende code <code> {{GraphChart|width=400|height=200|xAxisTitle=Tijd (s)|yAxisTitle=°C|legend=Legend|type=line|x=0,2,5,10,15,20,25,30,35,40,45,50,55,60|y1=100,92.3,83.0,71.7,64.3,59.4,56.2,54.1,52.7,51.8,51.2,50.8,50.5,50.3|y2=0,7.7,17.0,28.3,35.7,40.6,43.8,45.9,47.3,48.2,48.8,49.2,49.5,49.7|y3=100,84.6,65.9,43.4,28.6,18.9,12.4,8.2,5.4,3.6,2.3,1.5,1.0,0.7|interpolate=monotone|y1Title=Warme kant|y2Title=Koude kant|y3Title=Verschil|colors=red,blue,green|showValues}}</code>
+ staat in de artikelruimte van Wikipedia. Het sjabloon <code>GraphChart</code> is echter uitgeschakeld sinds januari 2025. 
+ Daarom migreren we zo'n 80 grafieken naar wikimedia commons. In de wikipedia artikelruimte komt 
+ <code>{{#chart:Tegenstroomprincipe1.chart}}</code> en in commons het grafiek xml-bestand 
+ https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.chart 
+ <code>  {
+    "license": "CC0-1.0",
+    "mediawikiCategories": [
+        {
+            "name": "Data:Line.chart"
+        }
+    ],
+    "version": 1,
+    "type": "line",
+    "title": {
+        "nl": ""
+    },
+    "xAxis": {
+        "title": {
+            "nl": "Tijd(s)"
+        }
+    },
+    "yAxis": {
+        "title": {
+            "nl": "°C"
+        },
+        "format": "auto"
+    },
+    "source": "Tegenstroomprincipe1.tab",
+    "@documentation": "https://www.mediawiki.org/wiki/Extension:Chart/Specification"
+}
+ </code>
+ met daarin een verwijzing naar de xml tabel 
+ https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.tab
+ <code>  {
+    "license": "CC0-1.0",
+    "description": {
+        "nl": "tegenstroom grafiek 1"
+    },
+    "mediawikiCategories": [
+        {
+            "name": "Data for Chart",
+            "sort": ""
+        },
+        {
+            "name": "Thermodynamics",
+            "sort": ""
+        }
+    ],
+    "schema": {
+        "fields": [
+            {
+                "name": "x",
+                "type": "number",
+                "title": {
+                    "en": "Time(s)",
+                    "nl": "Tijd(s)"
+                }
+            },
+            {
+                "name": "y1",
+                "type": "number",
+                "title": {
+                    "nl": "Koude kant"
+                }
+            },
+            {
+                "name": "y2",
+                "type": "number",
+                "title": {
+                    "nl": "Verschil"
+                }
+            },
+            {
+                "name": "y3",
+                "type": "number",
+                "title": {
+                    "nl": "Warme kant"
+                }
+            }
+        ]
+    },
+    "data": [
+        [
+            0,
+            0,
+            100,
+            100
+        ],
+        [
+            2,
+            7.7,
+            84.6,
+            92.3
+        ],
+        [
+            5,
+            17,
+            65.9,
+            83
+        ],
+        [
+            10,
+            28.3,
+            43.4,
+            71.7
+        ],
+        [
+            15,
+            35.7,
+            28.6,
+            64.3
+        ],
+        [
+            20,
+            40.6,
+            18.9,
+            59.4
+        ],
+        [
+            25,
+            43.8,
+            12.4,
+            56.2
+        ],
+        [
+            30,
+            45.9,
+            8.2,
+            54.1
+        ],
+        [
+            35,
+            47.3,
+            5.4,
+            52.7
+        ],
+        [
+            40,
+            48.2,
+            3.6,
+            51.8
+        ],
+        [
+            45,
+            48.8,
+            2.3,
+            51.2
+        ],
+        [
+            50,
+            49.2,
+            1.5,
+            50.8
+        ],
+        [
+            55,
+            49.5,
+            1,
+            50.5
+        ],
+        [
+            60,
+            49.7,
+            0.7,
+            50.3
+        ]
+    ]
+}
+  </code>
+ 
   <form id="frm1" action="/Van-Graphchart-sjabloon-naar-Commons-grafiek//actie_pagina.html">
   <label for="fname">First name:</label>
   <input type="text" id="fname" name="fname"><br><br>
