@@ -25,11 +25,10 @@ De volgende code <br>
  Daarom migreren we zo'n 80 grafieken naar wikimedia commons. In de wikipedia artikelruimte komt <br>
  <code>{{#chart:Tegenstroomprincipe1.chart}}</code> en in commons het grafiek xml-bestand <br>
  https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.chart <br>
- <code>   { "license": "CC0-1.0", 
-    "mediawikiCategories": [ {"name": "Data:Line.chart"} ], "version": 1, "type": "line",
-    "title": { "nl": "" }, "xAxis": { "title": { "nl": "Tijd(s)" } },
-    "yAxis": { "title": { "nl": "°C" }, "format": "auto" }, "source": "Tegenstroomprincipe1.tab",
-    "@documentation": "https://www.mediawiki.org/wiki/Extension:Chart/Specification" }
+ <code>   { "license": "CC0-1.0",  "mediawikiCategories": [ {"name": "Data:Line.chart"} ], "version": 1, <br>
+  "type": "line", "title": { "nl": "" }, "xAxis": { "title": { "nl": "Tijd(s)" } }, <br>
+  "yAxis": { "title": { "nl": "°C" }, "format": "auto" }, "source": "Tegenstroomprincipe1.tab", <br>
+  "@documentation": "https://www.mediawiki.org/wiki/Extension:Chart/Specification" } <br>
  </code><br>
  met daarin een verwijzing naar de xml tabel <br>
  https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.tab<br> 
@@ -47,12 +46,12 @@ De volgende code <br>
    [ 55, 49.5, 1, 50.5 ], [ 60, 49.7, 0.7, 50.3 ] ] } <br>
   </code> <br>
  
-  <label for="lname">Last name:</label>
+  <label for="lname">Artikelnaam en grafieknr. </label>
   <input type="text" id="lname" name="lname"><br><br>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Opsturen">
 </form>
-<p>Click "Try it" to display the value of each element in the form.</p>
-<button onclick="myFunction()">Try it</button>
+<p>Klik "Uitvoeren" om elk element in het formulier weer te geven.</p>
+<button onclick="myFunction()">Uitvoeren</button>
 <p id="demo"></p>
 <script>
 function myFunction() {
