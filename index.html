@@ -48,9 +48,11 @@ Van Graphchart sjabloon naar Commons grafiek
  
   <label for="lname">Artikelnaam en grafieknr. </label>
   <input type="text" id="lname" name="lname"><br><br>
+  <!--
   Sjabloon code <input type="submit" value="Opsturen"> (doet niks)
+  -->
 </form>
-<p>Klik "Uitvoeren" om de nieuwe artikelnaam en sjabloon weer te geven.</p>
+<p>Stap 1. Klik "Uitvoeren" voor een nieuwe artikelnaam en sjabloon.</p>
 <button onclick="nieuwSjabloon()">Uitvoeren</button>
 <p id="demo"></p>
 <script>
@@ -73,7 +75,7 @@ function nieuwSjabloon() {
  document.getElementById("tabelnaam").innerHTML = "https://commons.wikimedia.org/wiki/Data:" + x2.value + ".tab";
 }
  </script>
-<p>Klik "Lees Sjabloon" om het sjabloon te lezen.</p>
+<p>Stap 2: Klik "Lees Sjabloon" om het sjabloon te lezen.</p>
 <button onclick="leesSjabloon()">Lees Sjabloon</button>
 <p id="display"></p>
 <script>
