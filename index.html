@@ -79,6 +79,13 @@ function nieuwSjabloon() {
 <button onclick="leesSjabloon()">Lees Sjabloon</button>
 <p id="display"></p>
 <script>
+function get_string_between($string, $start, $end){ 
+  $string = " ".$string; $ini = strpos($string,$start); 
+  if ($ini == 0) return ""; 
+  $ini += strlen($start); 
+  $len = strpos($string,$end,$ini) - $ini; 
+  return substr($string,$ini,$len); 
+ }
 function leesSjabloon() {
   var x0 = document.getElementById("sjabloon");
   document.getElementById("display").innerHTML = x0.innerHTML;
