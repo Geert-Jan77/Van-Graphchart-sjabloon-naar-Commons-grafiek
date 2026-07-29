@@ -79,14 +79,16 @@ function nieuwSjabloon() {
 <button onclick="leesSjabloon()">Lees Sjabloon</button>
 <p id="display"></p>
 <script>
-function search($string, $start, $end) {
- preg_match("'".$start."(.*)".$end."'sim", $string, $out);
- if(isset($out[1])) { return $out[1]; }
- return false; 
- }
+ 
+function between($string, $start, $end) {
+ $string = " ".$string; $ini = strpos($string,$start);
+ if ($ini == 0) return ""; $ini += strlen($start);
+ $len = strpos($string,$end,$ini) - $ini;
+ return substr($string,$ini,$len);
+}
 function leesSjabloon() {
   var x0 = document.getElementById("sjabloon");
-  var xAxisTitle = search(x0.innerHTML,"xAxisTitle=","\|");
+  var xAxisTitle = between(x0.innerHTML,"xAxisTitle=","|");
   document.getElementById("display").innerHTML = xAxisTitle;
  }
 </script>
