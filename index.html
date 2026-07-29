@@ -94,9 +94,20 @@ function leesSjabloon() {
  var lft = rgth.substring(0,iend);
  text += lft.trim();
  text += "\" } }, { \"name\": \"y1\", \"type\": \"number\", \"title\": { \"nl\": \"";
+ var yTitle = "";
+ strt = "yAxisTitle=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { yTitle += "Foutmelding 2: yAxisTitle of y1Title is een verplicht veld"; } else 
+ { rgth = strng.substring(istrt + strt.length, strng.length);
+   eind = "|";
+   iend = rgth.indexOf(eind);
+   if (iend == -1) { eind = "}"; iend = rgth.indexOf(eind); }
+   lft = rgth.substring(0,iend);
+   yTitle += lft.trim();
+ }
  strt = "y1Title=";
  istrt = strng.indexOf(strt);
- if (istrt == -1) { text += "Foutmelding 2: y1Title is een verplicht veld"; } else {text += ""; }
+ if (istrt == -1) { text += yTitle; } else {text += ""; }
  rgth = strng.substring(istrt + strt.length, strng.length);
  eind = "|";
  iend = rgth.indexOf(eind);
@@ -286,12 +297,24 @@ var rij3 = 0;
     data4 += data_3[i] + ",";
   }
   data4 += data_3[rij3] + "<BR>";
-  
-  
+  if (kolom == 2) {
+  for (i = 0; i < rij ;i++) {
+   text += "[ " + data_0[i] + ", " + data_1[i] + " ], ";
+   }
+  text += "[ " + data_0[rij] + ", " + data_1[rij]+ " ] ";
+  }  
+  if (kolom == 3) {
+  for (i = 0; i < rij ;i++) {
+   text += "[ " + data_0[i] + ", " + data_1[i] + ", " + data_2[i] + " ], ";
+   }
+  text += "[ " + data_0[rij] + ", " + data_1[rij]+ ", " + data_2[rij]+ " ] ";
+  }
+  if (kolom == 4) {
   for (i = 0; i < rij ;i++) {
    text += "[ " + data_0[i] + ", " + data_1[i] + ", " + data_2[i] + ", " + data_3[i] + " ], ";
-  }
+   }
   text += "[ " + data_0[rij] + ", " + data_1[rij]+ ", " + data_2[rij]+ ", " + data_3[rij] + " ] ";
+  }
 
  text += " ] }"; 
  var text2 = "";
@@ -336,4 +359,3 @@ var rij3 = 0;
 
 </body>
 </html> 
-
