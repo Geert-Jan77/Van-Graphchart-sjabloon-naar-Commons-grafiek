@@ -131,7 +131,7 @@ function leesSjabloon() {
   text += lft;
   text += "\" } }";
  }
- text += " ] }, \"data\": [";
+ text += " ] }, \"data\": [ ";
  var data0 = "";
  var kolom = 0;
  strt = "x=";
@@ -179,19 +179,19 @@ function leesSjabloon() {
  rgth = data0;
  eind = ",";
  iend = rgth.indexOf(eind);
- if (istrt == -1) { data3 += "komma eind niet gevonden"; } else {dataA = data0.substring(iend, data0.length); }
+ if (istrt == -1) { data4 += "komma eind niet gevonden"; } else {dataA = data0.substring(iend, data0.length); }
  lft = rgth.substring(0,iend);
  data_0[0]= lft;
  do {
  strt = ",";
  istrt = dataA.indexOf(strt);
- if (istrt == -1) { data3 += "komma begin niet gevonden"; } else {rij += 1; }
+ if (istrt == -1) { data4 += "komma begin niet gevonden"; } else { rij += 1; }
  rgth = dataA.substring(istrt + strt.length, dataA.length);
  eind = ",";
  iend = rgth.indexOf(eind);
- if (iend == -1) { lft = rgth.substring(0,rgth.length); } else {lft = rgth.substring(0,iend); }
+ if (iend == -1) { lft = rgth.trim(); } else {lft = rgth.substring(0,iend); }
  data_0[rij]= lft;
- dataB = dataA.substring(iend, dataA.length);
+ dataB = dataA.substring(iend + 1, dataA.length);
  dataA = dataB
  } 
  while(iend != -1)
@@ -204,19 +204,19 @@ function leesSjabloon() {
  rgth = data1;
  eind = ",";
  iend = rgth.indexOf(eind);
- if (istrt == -1) { data3 += "komma eind niet gevonden"; } else {dataA = data1.substring(iend, data1.length); }
+ if (istrt == -1) { data4 += "komma eind niet gevonden"; } else {dataA = data1.substring(iend, data1.length); }
  lft = rgth.substring(0,iend);
  data_1[0]= lft;
  do {
  strt = ",";
  istrt = dataA.indexOf(strt);
- if (istrt == -1) { data3 += "komma begin niet gevonden"; } else {rij1 += 1; }
+ if (istrt == -1) { data4 += "komma begin niet gevonden"; } else {rij1 += 1; }
  rgth = dataA.substring(istrt + strt.length, dataA.length);
  eind = ",";
  iend = rgth.indexOf(eind);
- if (iend == -1) { lft = rgth.substring(0,rgth.length); } else {lft = rgth.substring(0,iend); }
+ if (iend == -1) { lft = rgth.trim(); } else {lft = rgth.substring(0,iend); }
  data_1[rij1]= lft;
- dataB = dataA.substring(iend, dataA.length);
+ dataB = dataA.substring(iend + 1, dataA.length);
  dataA = dataB
  } 
  while(iend != -1)
@@ -229,19 +229,19 @@ var rij2 = 0;
  rgth = data2;
  eind = ",";
  iend = rgth.indexOf(eind);
- if (istrt == -1) { data3 += "komma eind niet gevonden"; } else {dataA = data2.substring(iend, data2.length); }
+ if (istrt == -1) { data4 += "komma eind niet gevonden"; } else {dataA = data2.substring(iend, data2.length); }
  lft = rgth.substring(0,iend);
  data_2[0]= lft;
  do {
  strt = ",";
  istrt = dataA.indexOf(strt);
- if (istrt == -1) { data3 += "komma begin niet gevonden"; } else {rij2 += 1; }
+ if (istrt == -1) { data4 += "komma begin niet gevonden"; } else {rij2 += 1; }
  rgth = dataA.substring(istrt + strt.length, dataA.length);
  eind = ",";
  iend = rgth.indexOf(eind);
- if (iend == -1) { lft = rgth.substring(0,rgth.length); } else {lft = rgth.substring(0,iend); }
+ if (iend == -1) { lft = rgth.trim(); } else {lft = rgth.substring(0,iend); }
  data_2[rij2]= lft;
- dataB = dataA.substring(iend, dataA.length);
+ dataB = dataA.substring(iend + 1, dataA.length);
  dataA = dataB
  } 
  while(iend != -1)
@@ -254,19 +254,19 @@ var rij3 = 0;
  rgth = data3;
  eind = ",";
  iend = rgth.indexOf(eind);
- if (istrt == -1) { data3 += "komma eind niet gevonden"; } else {dataA = data3.substring(iend, data3.length); }
+ if (istrt == -1) { data4 += "komma eind niet gevonden"; } else {dataA = data3.substring(iend, data3.length); }
  lft = rgth.substring(0,iend);
  data_3[0]= lft;
  do {
  strt = ",";
  istrt = dataA.indexOf(strt);
- if (istrt == -1) { data3 += "komma begin niet gevonden"; } else {rij3 += 1; }
+ if (istrt == -1) { data4 += "komma begin niet gevonden"; } else {rij3 += 1; }
  rgth = dataA.substring(istrt + strt.length, dataA.length);
  eind = ",";
  iend = rgth.indexOf(eind);
- if (iend == -1) { lft = rgth.substring(0,rgth.length); } else {lft = rgth.substring(0,iend); }
+ if (iend == -1) { lft = rgth.trim(); } else {lft = rgth.substring(0,iend); }
  data_3[rij3]= lft;
- dataB = dataA.substring(iend, dataA.length);
+ dataB = dataA.substring(iend + 1, dataA.length);
  dataA = dataB
  } 
  while(iend != -1)
@@ -295,16 +295,15 @@ var rij3 = 0;
   
   
   for (i = 0; i < rij ;i++) {
-   data4 += "[ " + data_0[i] + ", " + data_1[i] + ", " + data_2[i] + ", " + data_3[i] + "] <BR>";
+   text += "[ " + data_0[i] + ", " + data_1[i] + ", " + data_2[i] + ", " + data_3[i] + " ], ";
   }
-  data4 += data_0[rij] + ", <BR>";
+  text += "[ " + data_0[rij] + ", " + data_1[rij]+ ", " + data_2[rij]+ ", " + data_3[rij] + " ] ";
 
- text += " [ 0, 0, 0, 0], [ 0, 0, 0, 0], [ 0, 0, 0, 0], [ 0, 0, 0, 0] ";
  text += " ] }"; 
- document.getElementById("display").innerHTML = text + "<BR>" + data0 + "<BR>" + data1 + "<BR>" + data2 + "<BR>" + data3 + "<BR>" + data4;
+ document.getElementById("display").innerHTML = "Foutopsporing tekst: <BR>" + data4;
+ document.getElementById("tabel").innerHTML = text;
  }
 </script>
 
 </body>
 </html> 
-
