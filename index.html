@@ -70,6 +70,7 @@ function nieuwSjabloon() {
   document.getElementById("sjabloon").innerHTML = x1.value;
  document.getElementById("grafieknaam").innerHTML = "https://commons.wikimedia.org/wiki/Data:" + x2.value + ".chart";
  document.getElementById("tabelnaam").innerHTML = "https://commons.wikimedia.org/wiki/Data:" + x2.value + ".tab";
+ document.getElementById("exec").innerHTML = "{{#chart:" + x2.value + ".chart}}";
 }
  </script>
 <p>Stap 2: Klik "Lees Sjabloon" om het sjabloon te lezen.</p>
@@ -91,7 +92,7 @@ function leesSjabloon() {
  var eind = "|";
  var iend = rgth.indexOf(eind);
  var lft = rgth.substring(0,iend);
- text += lft;
+ text += lft.trim();
  text += "\" } }, { \"name\": \"y1\", \"type\": \"number\", \"title\": { \"nl\": \"";
  strt = "y1Title=";
  istrt = strng.indexOf(strt);
@@ -100,7 +101,7 @@ function leesSjabloon() {
  eind = "|";
  iend = rgth.indexOf(eind);
  lft = rgth.substring(0,iend);
- text += lft;
+ text += lft.trim();
  text += "\" } }";
  strt = "y2Title=";
  istrt = strng.indexOf(strt);
@@ -110,7 +111,7 @@ function leesSjabloon() {
    eind = "|";
    iend = rgth.indexOf(eind);
    lft = rgth.substring(0,iend);
-   text += lft;
+   text += lft.trim();
    text += "\" } }";
  }
  strt = "y3Title=";
@@ -121,7 +122,7 @@ function leesSjabloon() {
   eind = "|";
   iend = rgth.indexOf(eind);
   lft = rgth.substring(0,iend);
-  text += lft;
+  text += lft.trim();
   text += "\" } }";
  }
  text += " ] }, \"data\": [ ";
@@ -293,10 +294,46 @@ var rij3 = 0;
   text += "[ " + data_0[rij] + ", " + data_1[rij]+ ", " + data_2[rij]+ ", " + data_3[rij] + " ] ";
 
  text += " ] }"; 
- document.getElementById("display").innerHTML = "Foutopsporing tekst: <BR>" + data4;
+ var text2 = "";
+ text2 += "{ \"license\": \"CC0-1.0\", \"mediawikiCategories\": [ {\"name\": \"Data:Line.chart\"} ], \"version\": 1, \"type\": \"";
+ strt = "type=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { text += "Foutmelding 5: Grafiek type niet gevonden"; } else 
+ { rgth = strng.substring(istrt + strt.length, strng.length);
+   eind = "|";
+   iend = rgth.indexOf(eind);
+   lft = rgth.substring(0,iend);
+   text2 += lft.trim();
+ }
+ text2 += "\", \"title\": { \"nl\": \"\" }, \"xAxis\": { \"title\": { \"nl\": \"";
+ strt = "xAxisTitle=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { text += "Foutmelding 6: titel van x-as niet gevonden"; } else 
+ { rgth = strng.substring(istrt + strt.length, strng.length);
+   eind = "|";
+   iend = rgth.indexOf(eind);
+   lft = rgth.substring(0,iend);
+   text2 += lft.trim();
+ }
+ text2 += "\" } }, \"yAxis\": { \"title\": { \"nl\": \"";
+ strt = "yAxisTitle=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { text += "Foutmelding 7: titel van y1-as niet gevonden"; } else 
+ { rgth = strng.substring(istrt + strt.length, strng.length);
+   eind = "|";
+   iend = rgth.indexOf(eind);
+   lft = rgth.substring(0,iend);
+   text2 += lft.trim();
+ }
+ text2 += "\" }, \"format\": \"auto\" }, \"source\": \"" + x2.value + ".tab\", \"@documentation\": \"https://www.mediawiki.org/wiki/Extension:Chart/Specification\" } ";
+ 
+ document.getElementById("display").innerHTML = "Foutopsporing tekst: <BR>" + data4 + "<BR>";
  document.getElementById("tabel").innerHTML = text;
+ document.getElementById("chart").innerHTML = text2;
+ 
  }
 </script>
 
 </body>
 </html> 
+
