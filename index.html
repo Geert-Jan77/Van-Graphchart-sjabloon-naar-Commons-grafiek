@@ -81,12 +81,13 @@ function nieuwSjabloon() {
 <script>
 function leesSjabloon() {
  var x0 = document.getElementById("sjabloon");
- var string = " "."|key1=value1|key2=value2"; 
+ var string = " " + "|key1=value1|key2=value2"; 
  var ini = strpos(string,"key1=");
- if (ini == 0) return "";
+ if (ini != 0) {
  ini += strlen("key1="); 
  var len = strpos(string,"|",ini) - ini; 
  document.getElementById("display").innerHTML = substr(string,ini,len);
+ }
 }
 </script>
 </body>
