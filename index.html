@@ -9,7 +9,7 @@ Van Graphchart sjabloon naar Commons grafiek
 <title>Van Graphchart sjabloon naar Commons grafiek</title>
 </head>
 <body>
-  <h3>Van Graphchart sjabloon naar Commons grafiek...</h3>
+  <h3>Van Graphchart sjabloon naar Commons grafiek</h3>
  <form id="frm1" action="/Van-Graphchart-sjabloon-naar-Commons-grafiek//actie_pagina.html">
  De volgende code <br><br>
  <label for="fname">Sjabloon code:</label>
@@ -80,12 +80,12 @@ function nieuwSjabloon() {
 <p id="display"></p>
 <script>
 function leesSjabloon() {
- $x0 = document.getElementById("sjabloon");
+ var x0 = document.getElementById("sjabloon");
  document.getElementById("display").innerHTML = x0.innerHTML;
- $strng = " " + "|key1=value1|key2=value2"; 
+ var strng = " " + "|key1=value1|key2=value2"; 
  document.getElementById("display").innerHTML = strng;
- $start = "key1=";
- $end = "\|";
+ var start = "key1=";
+ var end = "\|";
 
  }
 }
