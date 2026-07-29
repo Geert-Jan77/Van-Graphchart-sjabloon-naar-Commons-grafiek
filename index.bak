@@ -1,0 +1,98 @@
+ <!––
+Bekijk html in plaats van broncode.    
+https://geert-jan77.github.io/Van-Graphchart-sjabloon-naar-Commons-grafiek/
+Van Graphchart sjabloon naar Commons grafiek
+––>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Van Graphchart sjabloon naar Commons grafiek</title>
+</head>
+<body>
+  <h3>Van Graphchart sjabloon naar Commons grafiek.</h3>
+ <form id="frm1" action="/Van-Graphchart-sjabloon-naar-Commons-grafiek//actie_pagina.html">
+ De volgende code <br><br>
+ <label for="fname">Sjabloon code:</label>
+ <input type="text" id="fname" name="fname"><br>
+ <code> <div><p id="sjabloon">{{GraphChart|width=400|height=200|xAxisTitle=Tijd (s)|yAxisTitle=°C|legend=Legend|type=line
+  |x=0,2,5,10,15,20,25,30,35,40,45,50,55,60
+  |y1=100,92.3,83.0,71.7,64.3,59.4,56.2,54.1,52.7,51.8,51.2,50.8,50.5,50.3
+  |y2=0,7.7,17.0,28.3,35.7,40.6,43.8,45.9,47.3,48.2,48.8,49.2,49.5,49.7
+  |y3=100,84.6,65.9,43.4,28.6,18.9,12.4,8.2,5.4,3.6,2.3,1.5,1.0,0.7
+  |interpolate=monotone|y1Title=Warme kant|y2Title=Koude kant|y3Title=Verschil|colors=red,blue,green|showValues}}</p></div></code><br><br>
+ staat in de artikelruimte van Wikipedia. Het sjabloon <code>GraphChart</code> is echter uitgeschakeld sinds januari 2025.<br>
+ Op wikipedia komt dan <a href="./docs/assets/images/foutmelding.jpg">deze foutmelding</a>.<br>
+  Daarom migreren we zo'n 80 grafieken naar wikimedia commons. In de wikipedia artikelruimte komt <br>
+ <code>{{#chart:Tegenstroomprincipe1.chart}}</code> en n commons het grafiek xml-bestand <br>
+ <p id="grafieknaam">https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.chart</p> <br><br>
+ <code>  <div><p id="chart"> { "license": "CC0-1.0",  "mediawikiCategories": [ {"name": "Data:Line.chart"} ], "version": 1, 
+  "type": "line", "title": { "nl": "" }, "xAxis": { "title": { "nl": "Tijd(s)" } },
+  "yAxis": { "title": { "nl": "°C" }, "format": "auto" }, "source": "Tegenstroomprincipe1.tab", 
+  "@documentation": "https://www.mediawiki.org/wiki/Extension:Chart/Specification" } 
+ </p></div></code><br><br>
+ met daarin een verwijzing naar de xml tabel <br>
+ <p id="tabelnaam">https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.tab</p><br><br>  
+ <code> <div><p id="tabel"> { "license": "CC0-1.0", "description": { "nl": "tegenstroom grafiek 1" },
+   "mediawikiCategories": [ { "name": "Data for Chart", "sort": "" }, { "name": "Thermodynamics",
+   "sort": "" } ], "schema": { "fields": [ 
+   { "name": "x", "type": "number", "title": { "en": "Time(s)", "nl": "Tijd(s)" } },
+   { "name": "y1", "type": "number", "title": { "nl": "Koude kant" } },
+   { "name": "y2", "type": "number", "title": { "nl": "Verschil" } },
+   { "name": "y3", "type": "number", "title": { "nl": "Warme kant" } } ] },
+   "data": [ [ 0, 0, 100, 100 ], [ 2, 7.7, 84.6, 92.3 ], [ 5, 17, 65.9, 83 ], 
+   [ 10, 28.3, 43.4, 71.7 ], [ 15, 35.7, 28.6, 64.3 ], [ 20, 40.6, 18.9, 59.4 ], 
+   [ 25, 43.8, 12.4, 56.2 ], [ 30, 45.9, 8.2, 54.1 ], [ 35, 47.3, 5.4, 52.7 ], 
+   [ 40, 48.2, 3.6, 51.8 ],  [ 45, 48.8, 2.3, 51.2 ], [ 50, 49.2, 1.5, 50.8 ], 
+   [ 55, 49.5, 1, 50.5 ], [ 60, 49.7, 0.7, 50.3 ] ] } 
+  </p></div></code><br>
+ 
+  <label for="lname">Artikelnaam en grafieknr. </label>
+  <input type="text" id="lname" name="lname"><br><br>
+  <!--
+  Sjabloon code <input type="submit" value="Opsturen"> (doet niks)
+  -->
+</form>
+<p>Stap 1. Klik "Uitvoeren" voor een nieuwe artikelnaam en sjabloon.</p>
+<button onclick="nieuwSjabloon()">Uitvoeren</button>
+<p id="demo"></p>
+<script>
+function myFunction() {
+  var x = document.getElementById("frm1");
+  var text = "";
+  var i;
+  for (i = 0; i < x.length ;i++) {
+    text += x.elements[i].value + "<br>";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+ <script>
+function nieuwSjabloon() {
+  var x1 = document.getElementById("fname");
+  var x2 = document.getElementById("lname");
+  document.getElementById("sjabloon").innerHTML = x1.value;
+ document.getElementById("grafieknaam").innerHTML = "https://commons.wikimedia.org/wiki/Data:" + x2.value + ".chart";
+ document.getElementById("tabelnaam").innerHTML = "https://commons.wikimedia.org/wiki/Data:" + x2.value + ".tab";
+}
+ </script>
+<p>Stap 2: Klik "Lees Sjabloon" om het sjabloon te lezen.</p>
+<button onclick="leesSjabloon()">Lees Sjabloon</button>
+<p id="display"></p>
+<script>
+function leesSjabloon() {
+ var x0 = document.getElementById("sjabloon");
+ document.getElementById("display").innerHTML = x0.innerHTML;
+ var strng = " " + "|key1=value1|key2=value2"; 
+ var strt = "key1=";
+ var istrt = strng.indexOf(strt);
+ var rgth = strng.substring(istrt + strt.length, strng.length);
+ var eind = "|";
+ var iend = rgth.indexOf(eind);
+ var lft = rgth.substring(0,iend);
+
+ document.getElementById("display").innerHTML = lft;
+ }
+
+</script>
+</body>
+</html>
