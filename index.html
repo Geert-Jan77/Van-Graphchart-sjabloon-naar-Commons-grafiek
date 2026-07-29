@@ -79,7 +79,7 @@ function nieuwSjabloon() {
 <button onclick="leesSjabloon()">Lees Sjabloon</button>
 <p id="display"></p>
 <script>
-function get_string_between($string, $start, $end){ 
+function search($string, $start, $end){ 
   $string = " ".$string; $ini = strpos($string,$start); 
   if ($ini == 0) return ""; 
   $ini += strlen($start); 
@@ -88,7 +88,8 @@ function get_string_between($string, $start, $end){
  }
 function leesSjabloon() {
   var x0 = document.getElementById("sjabloon");
-  document.getElementById("display").innerHTML = x0.innerHTML;
+  var xAxisTitle=search(x0.innerHTML,"xAxisTitle=","|");
+  document.getElementById("display").innerHTML = xAxisTitle;
  }
 </script>
 </body>
