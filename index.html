@@ -132,9 +132,84 @@ function leesSjabloon() {
   text += "\" } }";
  }
  text += " ] }, \"data\": [";
+ var data0 = "";
+ var kolom = 0;
+ strt = "x=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { data0 += "Foutmelding 3: x is een verplicht veld"; } else {kolom += 1; }
+ rgth = strng.substring(istrt + strt.length, strng.length);
+ eind = "|";
+ iend = rgth.indexOf(eind);
+ lft = rgth.substring(0,iend);
+ data0 += lft;
+ var data1 = "";
+ strt = "y1=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { data1 += "Foutmelding 4: y1 is een verplicht veld"; } else {kolom += 1; }
+ rgth = strng.substring(istrt + strt.length, strng.length);
+ eind = "|";
+ iend = rgth.indexOf(eind);
+ lft = rgth.substring(0,iend);
+ data1 += lft;
+ var data2 = "";
+ strt = "y2=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { data2 += ""; } else {kolom += 1 ;}
+ rgth = strng.substring(istrt + strt.length, strng.length);
+ eind = "|";
+ iend = rgth.indexOf(eind);
+ lft = rgth.substring(0,iend);
+ data2 += lft;
+ var data3 = "";
+ strt = "y3=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { data3 += ""; } else {kolom += 1; }
+ rgth = strng.substring(istrt + strt.length, strng.length);
+ eind = "|";
+ iend = rgth.indexOf(eind);
+ lft = rgth.substring(0,iend);
+ data3 += lft;
+ data3 += "<BR> Kolommen " ;
+ for (i = 0; i < kolom ;i++) {
+    data3 += i + ",";
+  }
+ data3 += "<BR> Data " ;
+ var rij = 0;
+ var dataA = "";
+ var dataB = "";
+ const data_0 = [];
+ istrt = 0;
+ rgth = data0;
+ eind = ",";
+ iend = rgth.indexOf(eind);
+ if (istrt == -1) { data3 += "komma eind niet gevonden"; } else {dataA = data0.substring(iend, data0.length); }
+ lft = rgth.substring(0,iend);
+ data3 += lft;
+ data_0[0]= lft;
+ do {
+ strt = ",";
+ istrt = dataA.indexOf(strt);
+ if (istrt == -1) { data3 += "komma begin niet gevonden"; } else {rij += 1; }
+ rgth = dataA.substring(istrt + strt.length, dataA.length);
+ eind = ",";
+ iend = rgth.indexOf(eind);
+ if (iend == -1) { lft = rgth.substring(0,rgth.length); data3 += ","; } else {lft = rgth.substring(0,iend); data3 += ","; }
+ data3 += lft;
+ data_0[rij]= lft;
+ dataB = dataA.substring(iend, dataA.length);
+ dataA = dataB
+ } 
+ while(iend != -1)
+ data3 += "<BR> Rijen " + rij + "<BR>";
+ 
+ for (i = 0; i < rij ;i++) {
+    data3 += data_0[i] + ",";
+  }
+  data3 += data_0[rij];
+ data3 += "<BR> Data " ;
  text += " [ 0, 0, 0, 0], [ 0, 0, 0, 0], [ 0, 0, 0, 0], [ 0, 0, 0, 0] ";
  text += " ] }"; 
- document.getElementById("display").innerHTML = text;
+ document.getElementById("display").innerHTML = text + "<BR>" + data0 + "<BR>" + data1 + "<BR>" + data2 + "<BR>" + data3;
  }
 </script>
 
