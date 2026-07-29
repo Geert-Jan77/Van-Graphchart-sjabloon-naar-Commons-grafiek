@@ -328,7 +328,7 @@ var rij3 = 0;
  text2 += "\" }, \"format\": \"auto\" }, \"source\": \"" + x2.value + ".tab\", \"@documentation\": \"https://www.mediawiki.org/wiki/Extension:Chart/Specification\" } ";
  
  document.getElementById("display").innerHTML = "Foutopsporing tekst: <BR>" + data4 + "<BR>";
- document.getElementById("tabel").innerHTML = text.replace("undefined","null");
+ document.getElementById("tabel").innerHTML = text.replace(/undefined/gi,"null");
  document.getElementById("chart").innerHTML = text2;
  
  }
