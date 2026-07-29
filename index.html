@@ -82,6 +82,7 @@ function nieuwSjabloon() {
  
 function between($string, $start, $end) {
  $string = " ".$string; $ini = strpos($string,$start);
+ document.getElementById("display").innerHTML = $ini;
  if ($ini == 0) return ""; $ini += strlen($start);
  $len = strpos($string,$end,$ini) - $ini;
  return substr($string,$ini,$len);
