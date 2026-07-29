@@ -1,4 +1,4 @@
- <!––
+<!––
 Bekijk html in plaats van broncode.    
 https://geert-jan77.github.io/Van-Graphchart-sjabloon-naar-Commons-grafiek/
 Van Graphchart sjabloon naar Commons grafiek
@@ -80,19 +80,59 @@ function nieuwSjabloon() {
 <p id="display"></p>
 <script>
 function leesSjabloon() {
+ var text = "";
+ text += "{ \"license\": \"CC0-1.0\", \"description\": { \"nl\": \"";
+ var x2 = document.getElementById("lname");
+ text += x2.value + " grafiek\" }, \"mediawikiCategories\": [ { \"name\": \"Data for Chart\", \"sort\": \"\" } ], \"schema\": { \"fields\": [ { \"name\": \"x\", \"type\": \"number\", \"title\": { \"nl\": \"";
  var x0 = document.getElementById("sjabloon");
  document.getElementById("display").innerHTML = x0.innerHTML;
- var strng = " " + "|key1=value1|key2=value2"; 
- var strt = "key1=";
+ var strng = x0.innerHTML; 
+ var strt = "xAxisTitle=";
  var istrt = strng.indexOf(strt);
+ if (istrt == -1) { text += "Foutmelding 1: xAxisTitle is een verplicht veld"; } else {text += ""; }
  var rgth = strng.substring(istrt + strt.length, strng.length);
  var eind = "|";
  var iend = rgth.indexOf(eind);
  var lft = rgth.substring(0,iend);
-
- document.getElementById("display").innerHTML = lft;
+ text += lft;
+ text += "\" } }, { \"name\": \"y1\", \"type\": \"number\", \"title\": { \"nl\": \"";
+ strt = "y1Title=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { text += "Foutmelding 2: y1Title is een verplicht veld"; } else {text += ""; }
+ rgth = strng.substring(istrt + strt.length, strng.length);
+ eind = "|";
+ iend = rgth.indexOf(eind);
+ lft = rgth.substring(0,iend);
+ text += lft;
+ text += "\" } }";
+ strt = "y2Title=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { text += ""; } else 
+ { text += ", { \"name\": \"y2\", \"type\": \"number\", \"title\": { \"nl\": \"";
+   rgth = strng.substring(istrt + strt.length, strng.length);
+   eind = "|";
+   iend = rgth.indexOf(eind);
+   lft = rgth.substring(0,iend);
+   text += lft;
+   text += "\" } }";
  }
-
+ strt = "y3Title=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { text += ""; } else 
+ { text += ", { \"name\": \"y3\", \"type\": \"number\", \"title\": { \"nl\": \""; 
+  rgth = strng.substring(istrt + strt.length, strng.length);
+  eind = "|";
+  iend = rgth.indexOf(eind);
+  lft = rgth.substring(0,iend);
+  text += lft;
+  text += "\" } }";
+ }
+ text += " ] }, \"data\": [";
+ text += " [ 0, 0, 0, 0], [ 0, 0, 0, 0], [ 0, 0, 0, 0], [ 0, 0, 0, 0] ";
+ text += " ] }"; 
+ document.getElementById("display").innerHTML = text;
+ }
 </script>
+
 </body>
-</html>
+</html> 
