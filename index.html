@@ -26,7 +26,11 @@ https://www.w3schools.com/js/tryit.asp?filename=tryjs_myfirst
   |interpolate=monotone|y1Title=Warme kant|y2Title=Koude kant|y3Title=Verschil|colors=red,blue,green|showValues}}</p></div></code>
  staat in de artikelruimte van Wikipedia. Het sjabloon <code>GraphChart</code> is echter uitgeschakeld sinds januari 2025.<br>
  Op wikipedia komt dan <a href="./docs/assets/images/foutmelding.jpg">deze foutmelding</a>.<br>
-  Daarom migreren we zo'n 80 grafieken naar wikimedia commons. In de wikipedia artikelruimte komt <br>
+ Daarom migreren we zo'n 80 grafieken naar wikimedia commons. Online gereedschap om te vertalen is <br> 
+ https://edit-csv.net/ om tabellen te 'transponeren'. Offline gereedschap is notepad++, waarin je met [Ctrl]+[Alt]+muisselectie<br> 
+ een vertikaal stuk tekst selecteert om te bewerken. Dit alles is voldoende om de bestanden te creëren, en deze javascript pagina <br>
+ versnelt het vertaal proces door automatisering. bug: y1=1,2,3| wordt gelezen maar y =1,2,3}} niet. handmatig aanpassen dus.<br>
+  In de wikipedia artikelruimte komt <br>
  <code><p id="exec">{{#chart:Tegenstroomprincipe1.chart}}</p></code> en in commons het grafisch xml-bestand <br>
  <p id="grafieknaam">https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.chart</p> 
  <code>  <div><p id="chart"> { "license": "CC0-1.0",  "mediawikiCategories": [ {"name": "Data:Line.chart"} ], "version": 1, 
