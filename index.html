@@ -18,12 +18,12 @@ Debug het java script https://www.w3schools.com/js/tryit.asp?filename=tryjs_myfi
  De volgende code <br><br>
  <label for="fname">Sjabloon code:</label>
  <input type="text" id="fname" name="fname"><br>
- <code> <div><p id="sjabloon">{{GraphChart|width=400|height=200|xAxisTitle=Tijd (s)|yAxisTitle=°C|legend=Legend|type=line
+ <pre><code> <div><p id="sjabloon">{{GraphChart|width=400|height=200|xAxisTitle=Tijd (s)|yAxisTitle=°C|legend=Legend|type=line
   |x=0,2,5,10,15,20,25,30,35,40,45,50,55,60
   |y1=100,92.3,83.0,71.7,64.3,59.4,56.2,54.1,52.7,51.8,51.2,50.8,50.5,50.3
   |y2=0,7.7,17.0,28.3,35.7,40.6,43.8,45.9,47.3,48.2,48.8,49.2,49.5,49.7
   |y3=100,84.6,65.9,43.4,28.6,18.9,12.4,8.2,5.4,3.6,2.3,1.5,1.0,0.7
-  |interpolate=monotone|y1Title=Warme kant|y2Title=Koude kant|y3Title=Verschil|colors=red,blue,green|showValues}}</p></div></code>
+  |interpolate=monotone|y1Title=Warme kant|y2Title=Koude kant|y3Title=Verschil|colors=red,blue,green|showValues}}</p></div></code></pre>
  staat in de artikelruimte van Wikipedia. Het sjabloon <code>GraphChart</code> is echter uitgeschakeld sinds januari 2025.<br>
  Op wikipedia komt dan <a href="./docs/assets/images/foutmelding.jpg">deze foutmelding</a>.<br>
  Daarom migreren we zo'n 80 grafieken naar wikimedia commons. Online gereedschap om te vertalen is <br> 
@@ -33,18 +33,18 @@ Debug het java script https://www.w3schools.com/js/tryit.asp?filename=tryjs_myfi
  "license": "CC-BY-4.0", "sources": "bron", hoort in het databestand. In de wikipedia artikelruimte komt <br>
  <code><p id="exec">{{#chart:Tegenstroomprincipe1.chart}}</p></code> en in commons het grafisch xml-bestand <br>
  <p id="grafieknaam">https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.chart</p> 
- <code><div><p id="chart">{ "license": "CC0-1.0",  "mediawikiCategories": [ {"name": "Data:Line.chart"} ], "version": 1,
+ <pre><code><div><p id="chart">{ "license": "CC0-1.0",  "mediawikiCategories": [ {"name": "Data:Line.chart"} ], "version": 1,
  "type": "line", "title": { "nl": "" }, "xAxis": { "title": { "nl": "Tijd(s)" } }, "yAxis": { "title": { "nl": "°C" }, "format": "auto" }, "source": "Tegenstroomprincipe1.tab",
  "@documentation": "https://www.mediawiki.org/wiki/Extension:Chart/Specification" }
- </p></div></code>
+ </p></div></code></pre>
  met daarin een verwijzing naar de xml tabel <br>
  <p id="tabelnaam">https://commons.wikimedia.org/wiki/Data:Tegenstroomprincipe1.tab</p>
- <code> <div><p id="tabel"> { "license": "CC0-1.0", "description": { "nl": "Tegenstroomprincipe1 grafiek" }, "mediawikiCategories": [ { "name": "Data for Chart", "sort": "" } ], 
+ <pre><code> <div><p id="tabel"> { "license": "CC0-1.0", "description": { "nl": "Tegenstroomprincipe1 grafiek" }, "mediawikiCategories": [ { "name": "Data for Chart", "sort": "" } ], 
    "schema": { "fields": [ { "name": "x", "type": "number", "title": { "nl": "Tijd (s)" } }, { "name": "y1", "type": "number", "title": { "nl": "Warme kant" } }, { "name": "y2", 
    "type": "number", "title": { "nl": "Koude kant" } }, { "name": "y3", "type": "number", "title": { "nl": "Verschil" } } ] }, "data": [ [ 0, 100, 0, 100 ], [ 2, 92.3, 7.7, 84.6 ], 
    [ 5, 83.0, 17.0, 65.9 ], [ 10, 71.7, 28.3, 43.4 ], [ 15, 64.3, 35.7, 28.6 ], [ 20, 59.4, 40.6, 18.9 ], [ 25, 56.2, 43.8, 12.4 ], [ 30, 54.1, 45.9, 8.2 ], [ 35, 52.7, 47.3, 5.4 ], 
    [ 40, 51.8, 48.2, 3.6 ], [ 45, 51.2, 48.8, 2.3 ], [ 50, 50.8, 49.2, 1.5 ], [ 55, 50.5, 49.5, 1.0 ], [ 60, 50.3, 49.7, 0.7 ] ] } 
-  </p></div></code><br>
+  </p></div></code></pre><br>
  
   <label for="lname">Artikelnaam en grafieknr. </label>
   <input type="text" id="lname" name="lname"><br><br>
