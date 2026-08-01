@@ -648,6 +648,12 @@ var rij3 = 0;
 <p id="display"></p>
 <script>
 function vervangLicentie() {
+ var x0 = document.getElementById("tabel");
+ var strxo = x0.innerHTML;
+ var x1 = document.getElementById("chart");
+ var strx1 = x1.innerHTML;
+ document.getElementById("tabel").innerHTML = strx0.replace(/undefined/,"null");
+ document.getElementById("chart").innerHTML = strx1;replace(/undefined/,"null");
 }
 </script>
 </body>
