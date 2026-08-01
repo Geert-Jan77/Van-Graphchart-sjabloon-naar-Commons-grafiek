@@ -652,8 +652,10 @@ function vervangLicentie() {
  var strxo = x0.innerHTML;
  var x1 = document.getElementById("chart");
  var strx1 = x1.innerHTML;
- document.getElementById("tabel").innerHTML = strx0.replace(/"license": "CC0-1.0",/,"\"license\": \"CC-BY-4.0\", \"sources\": \"bron\",");
- document.getElementById("chart").innerHTML = strx1.replace(/"license": "CC0-1.0",/,"\"license\": \"CC-BY-4.0\",");
+ var strx2 = strx0.replace(/"license": "CC0-1.0",/,"\"license\": \"CC-BY-4.0\", \"sources\": \"bron\",");
+ var strx3 = strx1.replace(/"license": "CC0-1.0",/,"\"license\": \"CC-BY-4.0\",");
+ x0.innerHTML = strx2;
+ x1.innerHTML = strx3;
 }
 </script>
 </body>
