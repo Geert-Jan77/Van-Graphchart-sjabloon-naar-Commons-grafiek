@@ -360,6 +360,287 @@ var rij3 = 0;
  
  }
 </script>
+<button onclick="xAsText()">Maak text van de x-as</button>
+<p id="display"></p>
+<script>
+function xAsText() {
+ var text = "";
+ text += "{ \"license\": \"CC0-1.0\", \"description\": { \"nl\": \"";
+ var x2 = document.getElementById("lname");
+ text += x2.value + " grafiek\" }, \"mediawikiCategories\": [ { \"name\": \"Data for Chart\", \"sort\": \"\" } ], \"schema\": { \"fields\": [ { \"name\": \"x\", \"type\": \"string\", \"title\": { \"nl\": \"";
+ var x0 = document.getElementById("sjabloon");
+ document.getElementById("display").innerHTML = x0.innerHTML;
+ var strng = x0.innerHTML; 
+ var strt = "xAxisTitle=";
+ var istrt = strng.indexOf(strt);
+ if (istrt == -1) { text += "Foutmelding 1: xAxisTitle is een verplicht veld"; } else {text += ""; }
+ var rgth = strng.substring(istrt + strt.length, strng.length);
+ var eind = "|";
+ var iend = rgth.indexOf(eind);
+ var lft = rgth.substring(0,iend);
+ text += lft.trim();
+ text += "\" } }, { \"name\": \"y1\", \"type\": \"number\", \"title\": { \"nl\": \"";
+ var yTitle = "";
+ strt = "yAxisTitle=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { yTitle += "Foutmelding 2: yAxisTitle of y1Title is een verplicht veld"; } else 
+ { rgth = strng.substring(istrt + strt.length, strng.length);
+   eind = "|";
+   iend = rgth.indexOf(eind);
+   if (iend == -1) { eind = "}"; iend = rgth.indexOf(eind); }
+   lft = rgth.substring(0,iend);
+   yTitle += lft.trim();
+ }
+ strt = "y1Title=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { text += yTitle; } else {text += ""; }
+ rgth = strng.substring(istrt + strt.length, strng.length);
+ eind = "|";
+ iend = rgth.indexOf(eind);
+ lft = rgth.substring(0,iend);
+ text += lft.trim();
+ text += "\" } }";
+ strt = "y2Title=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { text += ""; } else 
+ { text += ", { \"name\": \"y2\", \"type\": \"number\", \"title\": { \"nl\": \"";
+   rgth = strng.substring(istrt + strt.length, strng.length);
+   eind = "|";
+   iend = rgth.indexOf(eind);
+   lft = rgth.substring(0,iend);
+   text += lft.trim();
+   text += "\" } }";
+ }
+ strt = "y3Title=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { text += ""; } else 
+ { text += ", { \"name\": \"y3\", \"type\": \"number\", \"title\": { \"nl\": \""; 
+  rgth = strng.substring(istrt + strt.length, strng.length);
+  eind = "|";
+  iend = rgth.indexOf(eind);
+  lft = rgth.substring(0,iend);
+  text += lft.trim();
+  text += "\" } }";
+ }
+ text += " ] }, \"data\": [ ";
+ var data0 = "";
+ var kolom = 0;
+ strt = "x=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { data0 += "Foutmelding 3: x is een verplicht veld"; } else {kolom += 1; }
+ rgth = strng.substring(istrt + strt.length, strng.length);
+ eind = "|";
+ iend = rgth.indexOf(eind);
+ lft = rgth.substring(0,iend);
+ data0 += lft;
+ var data1 = "";
+ strt = "y1=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { data1 += "Foutmelding 4: y1 is een verplicht veld"; } else {kolom += 1; }
+ rgth = strng.substring(istrt + strt.length, strng.length);
+ eind = "|";
+ iend = rgth.indexOf(eind);
+ lft = rgth.substring(0,iend);
+ data1 += lft;
+ var data2 = "";
+ strt = "y2=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { data2 += ""; } else {kolom += 1 ;}
+ rgth = strng.substring(istrt + strt.length, strng.length);
+ eind = "|";
+ iend = rgth.indexOf(eind);
+ lft = rgth.substring(0,iend);
+ data2 += lft;
+ var data3 = "";
+ var data4 = "";
+ strt = "y3=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { data3 += ""; } else {kolom += 1; }
+ rgth = strng.substring(istrt + strt.length, strng.length);
+ eind = "|";
+ iend = rgth.indexOf(eind);
+ lft = rgth.substring(0,iend);
+ data3 += lft;
 
+ var rij = 0;
+ var dataA = "";
+ var dataB = "";
+ const data_0 = [];
+ istrt = 0;
+ rgth = data0;
+ eind = ",";
+ iend = rgth.indexOf(eind);
+ if (istrt == -1) { data4 += "komma eind niet gevonden"; } else {dataA = data0.substring(iend, data0.length); }
+ lft = rgth.substring(0,iend);
+ data_0[0]= lft;
+ do {
+ strt = ",";
+ istrt = dataA.indexOf(strt);
+ if (istrt == -1) { data4 += "komma begin niet gevonden"; } else { rij += 1; }
+ rgth = dataA.substring(istrt + strt.length, dataA.length);
+ eind = ",";
+ iend = rgth.indexOf(eind);
+ if (iend == -1) { lft = rgth.trim(); } else {lft = rgth.substring(0,iend); }
+ data_0[rij]="\"" + lft +"\"";
+ dataB = dataA.substring(iend + 1, dataA.length);
+ dataA = dataB
+ } 
+ while(iend != -1)
+   
+ var rij1 = 0;
+ dataA = "";
+ dataB = "";
+ const data_1 = [];
+ istrt = 0;
+ rgth = data1;
+ eind = ",";
+ iend = rgth.indexOf(eind);
+ if (istrt == -1) { data4 += "komma eind niet gevonden"; } else {dataA = data1.substring(iend, data1.length); }
+ lft = rgth.substring(0,iend);
+ data_1[0]= lft;
+ do {
+ strt = ",";
+ istrt = dataA.indexOf(strt);
+ if (istrt == -1) { data4 += "komma begin niet gevonden"; } else {rij1 += 1; }
+ rgth = dataA.substring(istrt + strt.length, dataA.length);
+ eind = ",";
+ iend = rgth.indexOf(eind);
+ if (iend == -1) { lft = rgth.trim(); } else {lft = rgth.substring(0,iend); }
+ data_1[rij1]= lft;
+ dataB = dataA.substring(iend + 1, dataA.length);
+ dataA = dataB
+ } 
+ while(iend != -1)
+ 
+var rij2 = 0;
+ dataA = "";
+ dataB = "";
+ const data_2 = [];
+ istrt = 0;
+ rgth = data2;
+ eind = ",";
+ iend = rgth.indexOf(eind);
+ if (istrt == -1) { data4 += "komma eind niet gevonden"; } else {dataA = data2.substring(iend, data2.length); }
+ lft = rgth.substring(0,iend);
+ data_2[0]= lft;
+ do {
+ strt = ",";
+ istrt = dataA.indexOf(strt);
+ if (istrt == -1) { data4 += "komma begin niet gevonden"; } else {rij2 += 1; }
+ rgth = dataA.substring(istrt + strt.length, dataA.length);
+ eind = ",";
+ iend = rgth.indexOf(eind);
+ if (iend == -1) { lft = rgth.trim(); } else {lft = rgth.substring(0,iend); }
+ data_2[rij2]= lft;
+ dataB = dataA.substring(iend + 1, dataA.length);
+ dataA = dataB
+ } 
+ while(iend != -1)
+ 
+var rij3 = 0;
+ dataA = "";
+ dataB = "";
+ const data_3 = [];
+ istrt = 0;
+ rgth = data3;
+ eind = ",";
+ iend = rgth.indexOf(eind);
+ if (istrt == -1) { data4 += "komma eind niet gevonden"; } else {dataA = data3.substring(iend, data3.length); }
+ lft = rgth.substring(0,iend);
+ data_3[0]= lft;
+ do {
+ strt = ",";
+ istrt = dataA.indexOf(strt);
+ if (istrt == -1) { data4 += "komma begin niet gevonden"; } else {rij3 += 1; }
+ rgth = dataA.substring(istrt + strt.length, dataA.length);
+ eind = ",";
+ iend = rgth.indexOf(eind);
+ if (iend == -1) { lft = rgth.trim(); } else {lft = rgth.substring(0,iend); }
+ data_3[rij3]= lft;
+ dataB = dataA.substring(iend + 1, dataA.length);
+ dataA = dataB
+ } 
+ while(iend != -1)
+ 
+ data4 += "<BR> kolommen " + kolom ;
+ data4 += ", rijen " + rij + "," + rij1 + "," + rij2 + "," + rij3 + "<BR> data0 ";
+ for (i = 0; i < rij ;i++) {
+    data4 += data_0[i] + ",";
+  }
+  data4 += data_0[rij] + "<BR>";
+ data4 += "data1 ";
+ for (i = 0; i < rij1 ;i++) {
+    data4 += data_1[i] + ",";
+  }
+  data4 += data_1[rij1] + "<BR>"; 
+ data4 += "data2 ";
+ for (i = 0; i < rij2 ;i++) {
+    data4 += data_2[i] + ",";
+  }
+  data4 += data_2[rij2] + "<BR>";
+ data4 += "data3 ";
+ for (i = 0; i < rij3 ;i++) {
+    data4 += data_3[i] + ",";
+  }
+  data4 += data_3[rij3] + "<BR>";
+  if (kolom == 2) {
+  for (i = 0; i < rij ;i++) {
+   text += "[ " + data_0[i] + ", " + data_1[i] + " ], ";
+   }
+  text += "[ " + data_0[rij] + ", " + data_1[rij]+ " ] ";
+  }  
+  if (kolom == 3) {
+  for (i = 0; i < rij ;i++) {
+   text += "[ " + data_0[i] + ", " + data_1[i] + ", " + data_2[i] + " ], ";
+   }
+  text += "[ " + data_0[rij] + ", " + data_1[rij]+ ", " + data_2[rij]+ " ] ";
+  }
+  if (kolom == 4) {
+  for (i = 0; i < rij ;i++) {
+   text += "[ " + data_0[i] + ", " + data_1[i] + ", " + data_2[i] + ", " + data_3[i] + " ], ";
+   }
+  text += "[ " + data_0[rij] + ", " + data_1[rij]+ ", " + data_2[rij]+ ", " + data_3[rij] + " ] ";
+  }
+
+ text += " ] }"; 
+ var text2 = "";
+ text2 += "{ \"license\": \"CC0-1.0\", \"mediawikiCategories\": [ {\"name\": \"Data:Line.chart\"} ], \"version\": 1, \"type\": \"";
+ strt = "type=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { text += "Foutmelding 5: Grafiek type niet gevonden"; } else 
+ { rgth = strng.substring(istrt + strt.length, strng.length);
+   eind = "|";
+   iend = rgth.indexOf(eind);
+   lft = rgth.substring(0,iend);
+   text2 += lft.trim();
+ }
+ text2 += "\", \"title\": { \"nl\": \"\" }, \"xAxis\": { \"title\": { \"nl\": \"";
+ strt = "xAxisTitle=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { text += "Foutmelding 6: titel van x-as niet gevonden"; } else 
+ { rgth = strng.substring(istrt + strt.length, strng.length);
+   eind = "|";
+   iend = rgth.indexOf(eind);
+   lft = rgth.substring(0,iend);
+   text2 += lft.trim();
+ }
+ text2 += "\" } }, \"yAxis\": { \"title\": { \"nl\": \"";
+ strt = "yAxisTitle=";
+ istrt = strng.indexOf(strt);
+ if (istrt == -1) { text += "Foutmelding 7: titel van y1-as niet gevonden"; } else 
+ { rgth = strng.substring(istrt + strt.length, strng.length);
+   eind = "|";
+   iend = rgth.indexOf(eind);
+   lft = rgth.substring(0,iend);
+   text2 += lft.trim();
+ }
+ text2 += "\" }, \"format\": \"auto\" }, \"source\": \"" + x2.value + ".tab\", \"@documentation\": \"https://www.mediawiki.org/wiki/Extension:Chart/Specification\" } ";
+ 
+ document.getElementById("display").innerHTML = "Foutopsporing tekst: <BR>" + data4 + "<BR>";
+ document.getElementById("tabel").innerHTML = text.replace(/undefined/gi,"null");
+ document.getElementById("chart").innerHTML = text2;
+ 
+ }
+</script>
 </body>
 </html> 
