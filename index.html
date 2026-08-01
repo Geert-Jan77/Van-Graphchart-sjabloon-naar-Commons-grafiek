@@ -71,7 +71,7 @@ function myFunction() {
 function nieuwSjabloon() {
   var x1 = document.getElementById("fname");
   var x2 = document.getElementById("lname");
-  document.getElementById("sjabloon").innerHTML = x1.value.replace(/\s/g, "");
+  document.getElementById("sjabloon").innerHTML = x1.value.replace(/\s/g, "").replace(/|y=/gi,"|y1=") .replace(/}}/gi,"|}}");
  document.getElementById("grafieknaam").innerHTML = "https://commons.wikimedia.org/wiki/Data:" + x2.value + ".chart";
  document.getElementById("tabelnaam").innerHTML = "https://commons.wikimedia.org/wiki/Data:" + x2.value + ".tab";
  document.getElementById("exec").innerHTML = "{{#chart:" + x2.value + ".chart}}";
