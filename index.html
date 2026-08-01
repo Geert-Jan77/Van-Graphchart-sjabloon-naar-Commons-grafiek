@@ -644,12 +644,12 @@ var rij3 = 0;
  }
 </script>
   <p>Stap 4: Klik "Vervang licentie" om licentie CC0-1.0 te vervangen met de tekst "license": "CC-BY-4.0", "sources": "bron", </p>
-<button onclick="vervanLicentie()">Vervang licentie</button>
+<button onclick="vervangLicentie()">Vervang licentie</button>
 <p id="display"></p>
 <script>
 function vervangLicentie() {
  var x0 = document.getElementById("tabel");
- var strxo = x0.innerHTML;
+ var strx0 = x0.innerHTML;
  var x1 = document.getElementById("chart");
  var strx1 = x1.innerHTML;
  var strx2 = strx0.replace(/"license": "CC0-1.0",/,"\"license\": \"CC-BY-4.0\", \"sources\": \"bron\",");
